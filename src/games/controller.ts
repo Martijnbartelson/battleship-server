@@ -1,6 +1,6 @@
 import { JsonController, Post, Param, HttpCode, NotFoundError, Get, BodyParam } from 'routing-controllers'
 import { Game } from './entity'
-import { makeUserMove, makeComputerMove, checkFinished } from './game'
+import { makeUserMove, makeComputerMove, checkFinished, getShipsGrid } from './game'
 
 @JsonController()
 export default class GameController {
@@ -8,7 +8,10 @@ export default class GameController {
   @Post('/games')
   @HttpCode(201)
   async createGame() {  
-    return await Game.create().save()  
+    let game = await Game.create()
+    game.shipsGridUser = getShipsGrid()
+    game.shipsGridComputer = getShipsGrid()
+    return game.save()  
   }
 
   @Get('/games/:id([0-9]+)')

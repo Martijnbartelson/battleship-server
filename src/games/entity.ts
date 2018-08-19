@@ -1,6 +1,6 @@
 import { BaseEntity, PrimaryGeneratedColumn, Column, Entity } from 'typeorm'
 import { IsString, IsNumber } from 'class-validator'
-import { baseGrid, getShipsGrid } from './game'
+import { baseGrid } from './game'
 
 type Player = 'user' | 'computer'
 type Status = 'started' | 'finished'
@@ -13,10 +13,10 @@ export class Game extends BaseEntity {
   @PrimaryGeneratedColumn()
   id?: number
 
-  @Column('json', {default: getShipsGrid()})
+  @Column('json', {nullable: true})
   shipsGridUser: any
 
-  @Column('json', {default: getShipsGrid()})
+  @Column('json', {nullable: true})
   shipsGridComputer: any
 
   @Column('json', {default: [...baseGrid]})

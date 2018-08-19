@@ -19,11 +19,11 @@ __decorate([
     __metadata("design:type", Number)
 ], Game.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column('json', { default: game_1.getShipsGrid() }),
+    typeorm_1.Column('json', { nullable: true }),
     __metadata("design:type", Object)
 ], Game.prototype, "shipsGridUser", void 0);
 __decorate([
-    typeorm_1.Column('json', { default: game_1.getShipsGrid() }),
+    typeorm_1.Column('json', { nullable: true }),
     __metadata("design:type", Object)
 ], Game.prototype, "shipsGridComputer", void 0);
 __decorate([

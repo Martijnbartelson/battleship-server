@@ -17,7 +17,10 @@ const entity_1 = require("./entity");
 const game_1 = require("./game");
 let GameController = class GameController {
     async createGame() {
-        return await entity_1.Game.create().save();
+        let game = await entity_1.Game.create();
+        game.shipsGridUser = game_1.getShipsGrid();
+        game.shipsGridComputer = game_1.getShipsGrid();
+        return game.save();
     }
     async getGame(id) {
         const game = await entity_1.Game.findOneById(id);

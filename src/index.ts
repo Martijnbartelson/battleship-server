@@ -3,6 +3,8 @@ import { createKoaServer } from 'routing-controllers'
 import GameController from './games/controller'
 import setupDb from './db'
 
+const port = process.env.PORT || 4000
+
 const app = createKoaServer({
   cors: true,
   controllers: [
@@ -12,6 +14,6 @@ const app = createKoaServer({
 
 setupDb()
   .then(_ =>
-    app.listen(4000, () => console.log('Listening on port 4000'))
+    app.listen(port, () => console.log(`Listening on port ${port}`))
   )
   .catch(err => console.error(err))

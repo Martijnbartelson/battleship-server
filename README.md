@@ -1,3 +1,3 @@
-# Destroyer server
+# Battleship server
 
-This is the server for a destroyer game
+This is the server for a battleship game

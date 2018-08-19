@@ -4,7 +4,7 @@
 // 'oo' = mis
 
 
-// VARIABLES
+// VARIABLES //
 
 export const baseGrid = [
     [null,null,null,null,null,null,null,null,null,null,null,null],
@@ -29,7 +29,7 @@ const ships = [
 ]
 
 
-// HELPER FUNCTIONS
+// HELPER FUNCTIONS //
 
 const randomNumber = () => Math.floor(Math.random() * 12)
 const randomDirection = () => Math.random() > 0.5 ? 'down' : 'right'
@@ -101,7 +101,7 @@ const placeShipOnGrid = (grid,ship,shipIsPlaced=false) => {
 
 
 
-// GAME FUNCTIONS
+// GAME FUNCTIONS //
 
 export const getShipsGrid = () => {
     let grid = null
